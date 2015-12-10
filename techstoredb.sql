@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2015 at 10:53 PM
+-- Generation Time: Dec 10, 2015 at 10:51 PM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -31,7 +31,8 @@ CREATE TABLE `products` (
   `prod_desc` varchar(50) NOT NULL,
   `prod_img` varchar(20) NOT NULL,
   `prod_price` decimal(10,0) NOT NULL,
-  `prod_qty` int(3) NOT NULL
+  `prod_qty` int(3) NOT NULL,
+  `prod_cat` varchar(20) NOT NULL    
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,7 +58,6 @@ CREATE TABLE `users` (
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_ID`),
   ADD UNIQUE KEY `user_ID` (`user_ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
