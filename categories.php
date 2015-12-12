@@ -25,7 +25,7 @@
                     echo
                         '<tr>
                             <td> 
-                                <a href="'.$row['cat_name'].'.php">'.$row['cat_name'].'</a>
+                                <a href="products/'.$row['cat_pageName'].'.php">'.$row['cat_name'].'</a>
                             </td>
                             <td>'
                                 .$row['cat_desc'].'
