@@ -34,27 +34,20 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
 	<head>
         <title>PC Store Login</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Oswald' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css">
 	</head>
 	<body class="secureBody">
 		 <main>
             <form id="login" class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-                <ul>
-                    <li> <!-- login item -->
-                        <h1 class="title">Login</h1>
-                    </li>
-                    <li> <!-- username item -->
-                        <label for="loginame">Username</label>
-                        <input type="text" id="userName" name="userName" placeholder="User Name" required>
-                    </li>
-                    <li> <!-- password item -->
-                        <label for="userpassword">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Password" required>
-                    </li>
-                    <li> <!-- submit item -->
-                        <input type="submit" id="submit" name="submit" value="Login">
-                    </li>
-                    <h3>don't have an account? register <a href="registration.php">here!</a></h3>
-                </ul>
+                <h2 class="title">Login</h2>
+                <label for="loginame">Username</label>
+                <input type="text" id="userName" name="userName" placeholder="User Name" required>
+                <label for="userpassword">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="submit" id="submit" name="submit" value="Login">
+                <h3>Don't have an account? Register <a href="registration.php">here!</a></h3>
             </form>
 		</main>
 	</body>
