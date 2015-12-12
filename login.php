@@ -21,7 +21,7 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
     if ($v_username == $userRecords[4] && $v_password == $userRecords[5]) { // if entered data matches records
         $_SESSION['loggedIn'] = $v_username; // allow secure access
         $_SESSION['name'] = $v_username; // name session after username
-        header("Location: store.php"); // login user
+        header("Location: categories.php"); // login user
         mysql_close ($link); // close database for security
         exit(); // end php
     } else { // incorrectly entered username and/or password // error
@@ -37,17 +37,17 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
 	</head>
 	<body class="secureBody">
 		 <main>
-            <form id="login" class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+            <form id="login" class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <ul>
                     <li> <!-- login item -->
                         <h1 class="title">Login</h1>
                     </li>
                     <li> <!-- username item -->
-                        <label for="loginame">Username</label>
+                        <label for="username">Username</label>
                         <input type="text" id="userName" name="userName" placeholder="User Name" required>
                     </li>
                     <li> <!-- password item -->
-                        <label for="userpassword">Password</label>
+                        <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Password" required>
                     </li>
                     <li> <!-- submit item -->
