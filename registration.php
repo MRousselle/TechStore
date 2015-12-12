@@ -5,7 +5,7 @@
     <title>Butts</title>
 </head>
 <body>
-    <form action="reg.php" method="post" name="" id="">
+    <form action="reg.php" method="post" name="register" id="registerForm">
         First Name: <input type="text" name="firstName" id="firstName" required><br>
         Last Name: <input type="text" name="lastName" id="lastName" required><br>
         Email: <input type="email" name="email" id="email"><br>
