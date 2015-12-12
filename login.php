@@ -21,7 +21,7 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
     if ($v_username == $userRecords[4] && $v_password == $userRecords[5]) { // if entered data matches records
         $_SESSION['loggedIn'] = $v_username; // allow secure access
         $_SESSION['name'] = $v_username; // name session after username
-        header("Location: store.php"); // login user
+        header("Location: categories.php"); // login user
         mysql_close ($link); // close database for security
         exit(); // end php
     } else { // incorrectly entered username and/or password // error

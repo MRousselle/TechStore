@@ -5,9 +5,9 @@
     <title>Catalog</title>
 </head>
 <body>
-    <?php include "connectdb.php" ?>
+    <?php include "../connectdb.php" ?>
     <?php 
-        $results = mysql_query("SELECT * FROM product ") <!--STUFF FOR SELECTING THE CATEGORY GOES HERE! -->or die ("retrieving info failed: ").mysql_error;
+        $results = mysql_query("SELECT * FROM products WHERE prod_cat = 'videocards'") or die ("retrieving info failed: ").mysql_error;
         $num_rows = mysql_num_rows($results);
     ?>
     <h2>List of Products</h2>
