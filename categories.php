@@ -35,10 +35,10 @@
                         //         <img src="images/'.$row['cat_img'].'"/>
                         //     </td>
                         // </tr>';
-                        <div class="categoryDiv">
+                        '<div class="categoryDiv">
                             <a href="products/'.$row['cat_pageName'].'.php"><img src="images/'.$row['cat_img'].'"/></a>
 
-                        </div>
+                        </div>' ;
                 }
             }
         ?>
