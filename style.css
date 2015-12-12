@@ -86,3 +86,22 @@ body {
 .form h3 a {
 	color: #FFEB3B;
 }
+
+.wrapper {
+	display: inline-block;
+	max-width: 960px;
+	width: 90%;
+}
+
+.categoryDiv {
+	box-sizing: border-box;
+	margin: 35px 2%;
+	width: 30%;
+}
+
+.categoryDiv img {
+	display: block;
+	margin: 0 auto;
+	max-height: 100%;
+	max-width: 100%;
+}

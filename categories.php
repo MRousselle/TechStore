@@ -11,32 +11,39 @@
         $num_rows = mysql_num_rows($results);
     ?>
     <h2>List of Products</h2>
-    <table border="2">
+    <div class="wrapper">
+    <!-- <table border="2">
         <tr>
             <td>Category Name</td>
             <td>Category Description</td>
             <td>Category Image</td>
-        </tr>
+        </tr> -->
         <?php
             if ($num_rows = 0) {
 //                echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
                     echo
-                        '<tr>
-                            <td> 
-                                <a href="products/'.$row['cat_pageName'].'.php">'.$row['cat_name'].'</a>
-                            </td>
-                            <td>'
-                                .$row['cat_desc'].'
-                            </td>
-                            <td>
-                                <img src="images/'.$row['cat_img'].'"/>
-                            </td>
-                        </tr>';
+                        // '<tr>
+                        //     <td> 
+                        //         <a href="products/'.$row['cat_pageName'].'.php">'.$row['cat_name'].'</a>
+                        //     </td>
+                        //     <td>'
+                        //         .$row['cat_desc'].'
+                        //     </td>
+                        //     <td>
+                        //         <img src="images/'.$row['cat_img'].'"/>
+                        //     </td>
+                        // </tr>';
+                        <div class="categoryDiv">
+                            <a href="products/'.$row['cat_pageName'].'.php"><img src="images/'.$row['cat_img'].'"/></a>
+
+                        </div>
                 }
             }
         ?>
-    </table>
+
+    <!-- </table> -->
+    </div>
 </body>
 </html>
