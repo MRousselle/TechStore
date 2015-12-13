@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Catalog</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php include "connectdb.php" ?>

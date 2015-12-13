@@ -88,8 +88,9 @@ body {
 }
 
 .wrapper {
-	display: inline-block;
+	display: block;
 	max-width: 960px;
+	margin: 0 auto;
 	width: 90%;
 }
 
