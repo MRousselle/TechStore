@@ -27,16 +27,23 @@
     </header>
     <table>
         <tr>
-            <td>Category Name</td>
-            <td>Category Description</td>
-            <td>Category Image</td>
+            <td>Image</td>
+            <td>Name</td>
+            <td>Description</td>
         </tr>
         <?php
             if ($num_rows == 0) {
                echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
-                    echo'<tr><td><img src="../images/'.$row['prod_img'].'"/></td><td> '.$row['prod_name'].'</td><td>'.$row['prod_desc'].'</td></tr>';
+                    echo'<tr class="">
+                            <td><img src="../images/'.$row['prod_img'].'"/></td>
+                            <td>
+                                <span class="prodName">'.$row['prod_name'].'</span>
+                                '.$row['prod_desc'].'
+                            </td>
+                            <td></td>
+                        </tr>';
                 }
             }
         ?>
