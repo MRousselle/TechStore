@@ -192,3 +192,8 @@ a {
 	text-align: center;
 	text-decoration: none;
 }
+
+table {
+	margin: 0 2.5%;
+	width: 95%;
+}

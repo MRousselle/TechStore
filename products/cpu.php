@@ -25,18 +25,18 @@
             </ul>
         </nav>
     </header>
-    <table border="2">
+    <table>
         <tr>
             <td>Category Name</td>
             <td>Category Description</td>
             <td>Category Image</td>
         </tr>
         <?php
-            if ($num_rows = 0) {
-//                echo "No Products, check back soon";
+            if ($num_rows == 0) {
+               echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
-                    echo'<tr><td> '.$row['prod_name'].'</td><td>'.$row['prod_desc'].'</td><td><img src="images/'.$row['prod_img'].'"/></td></tr>';
+                    echo'<tr><td><img src="../images/'.$row['prod_img'].'"/></td><td> '.$row['prod_name'].'</td><td>'.$row['prod_desc'].'</td></tr>';
                 }
             }
         ?>
