@@ -1,3 +1,10 @@
+<?php 
+session_start();
+    require_once('connectdb.php'); // database access
+    if(isset($_SESSION['loggedIn'])) { // user session check // set product variable based on previous user input
+        $results = mysql_query("SELECT * FROM category") or die ("retrievig info failed:").mysql_error; // if failed present an error// var to hold product row data
+        $num_rows = mysql_num_rows($results);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +15,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php require_once("connectdb.php") ?>
-    <?php 
-        $results = mysql_query("SELECT * FROM category ") or die ("retrieving info failed: ").mysql_error;
-        $num_rows = mysql_num_rows($results);
-    ?>
     <div class="wrapper">
     <div class="greenBack">
     <header>
@@ -21,7 +23,7 @@
             <ul>
                 <a href="categories.php"><li>Home</li></a>
                 <a href=""><li>Cart</li></a>
-                <a href=""><li>Log Out</li></a>
+                <a href="logout.php"><li>Log Out</li></a>
             </ul>
         </nav>
     </header>
@@ -34,21 +36,10 @@
         </tr> -->
         <?php
             if ($num_rows = 0) {
-//                echo "No Products, check back soon";
+              echo "No products, please check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
                     echo
-                        // '<tr>
-                        //     <td> 
-                        //         <a href="products/'.$row['cat_pageName'].'.php">'.$row['cat_name'].'</a>
-                        //     </td>
-                        //     <td>'
-                        //         .$row['cat_desc'].'
-                        //     </td>
-                        //     <td>
-                        //         <img src="images/'.$row['cat_img'].'"/>
-                        //     </td>
-                        // </tr>';
                         '<div class="categoryDiv">
                             <a href="products/'.$row['cat_pageName'].'.php"><div><img src="images/'.$row['cat_img'].'"/></div>
                             <span class="categoryName">'.$row['cat_name'].'</span></a>
@@ -59,6 +50,14 @@
 
     <!-- </table> -->
 </div>
-    </div>
+</div>
 </body>
 </html>
+
+<?php                                     
+} else { // not logged in 
+    header("Location: login.php"); // login user
+    mysql_close ($link); // close database for security
+    exit(); // end php
+}
+?>
