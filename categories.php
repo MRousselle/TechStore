@@ -21,8 +21,6 @@
         <h2>RJTS Computers</h2>
         <nav>
             <ul>
-                <a href="categories.php"><li>Home</li></a>
-                <a href=""><li>Cart</li></a>
                 <a href="logout.php"><li>Log Out</li></a>
             </ul>
         </nav>

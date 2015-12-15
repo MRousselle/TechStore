@@ -202,6 +202,7 @@ table {
 
 .productTR {
 	margin: 0 2.5%;
+	height: 125px;
 	width: 95%;
 }
 
@@ -215,7 +216,8 @@ table {
 
 .productTR img {
 	padding: 15px 0 15px 25px;
-	width: 200px;
+	max-width: 200px;
+	max-height: 124px;
 }
 
 .productTR td:nth-of-type(3n+1) {
