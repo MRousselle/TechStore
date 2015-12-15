@@ -38,7 +38,7 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Oswald' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="style.css">
 	</head>
-	<body class="secureBody">
+	<body>
 		 <main>
             <form id="login" class="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <h2 class="title">Login</h2>
