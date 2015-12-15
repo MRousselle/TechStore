@@ -22,7 +22,7 @@
 //                echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
-                    echo'<tr><td> '.$row['prod_name'].'</td><td>'.$row['prod_desc'].'</td><td><img src="images/'.$row['prod_img'].'"/></td></tr>';
+                    echo'<tr><td> '.$row['prod_name'].'</td><td>'.$row['prod_desc'].'</td><td><img src="../images/'.$row['prod_img'].'"/></td></tr>';
                 }
             }
         ?>
