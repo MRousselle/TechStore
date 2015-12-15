@@ -1,32 +1,32 @@
 <?php
 if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted  
-    function validator($data) { // security function
-        if ( isset($data)){ // confirm there is data
-            $data = trim($data); // strip spaces
-            $data = stripslashes($data); // strip slashes
-            $data = htmlspecialchars($data); // convert any html special chars into standard text
-            $data = filter_var($data, FILTER_SANITIZE_STRING); // filter the string
-            return $data; // return the entered data
+    function validator($data) { // SECURITY CHECK
+        if ( isset($data)){ 
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            $data = filter_var($data, FILTER_SANITIZE_STRING);
+            return $data;
         } else {
             exit(); // end php
         } // end else
     } // end function
     $v_username  = validator($_POST['userName']); // username
     $v_password  = validator($_POST['password']); // password
-    require_once('connectdb.php'); // allow database access
-    $results = mysql_query( // check if user exists
+    require_once('connectdb.php');
+    $results = mysql_query( //User check
             "SELECT * FROM users WHERE user_userName = '$v_username'"
-    ) or die (mysql_error()); // if failed present an error
-    $userRecords =  mysql_fetch_row($results); // fetch row data for the user
-    if ($v_username == $userRecords[4] && $v_password == $userRecords[5]) { // if entered data matches records
-        $_SESSION['loggedIn'] = $v_username; // allow secure access
-        $_SESSION['name'] = $v_username; // name session after username
-        header("Location: categories.php"); // login user
-        mysql_close ($link); // close database for security
-        exit(); // end php
-    } else { // incorrectly entered username and/or password // error
-    } // end security check else
-} // end on submit
+    ) or die (mysql_error());
+    $userRecords =  mysql_fetch_row($results);
+    if ($v_username == $userRecords[4] && $v_password == $userRecords[5]) { //match check
+        $_SESSION['loggedIn'] = $v_username;
+        $_SESSION['name'] = $v_username; // Name of the session
+        header("Location: categories.php"); //Redirect
+        mysql_close ($link); 
+        exit();
+    } else { //Do nothing if password is wrong
+    }
+}
 ?>
 
 <!doctype html>
