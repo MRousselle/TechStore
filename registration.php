@@ -19,9 +19,9 @@
         <label for="userName">User Name</label>
             <input type="text" name="userName" id="userName" required>
         <label for="password">Password</label>
-            <input type="text" name="password" id="password" required>
+            <input type="password" name="password" id="password" required>
         <label for="confirmPassword">Confirm Password</label>
-            <input type="text" name="confirmPassword" id="password" required>
+            <input type="password" name="confirmPassword" id="password" required>
             <input type="submit" value="Register">
     </form>
 </body>
