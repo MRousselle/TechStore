@@ -197,3 +197,16 @@ table {
 	margin: 0 2.5%;
 	width: 95%;
 }
+
+.prodName {
+	color: #FFFFFF;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+.test {
+	border: solid 2px red;
+}
