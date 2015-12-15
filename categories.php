@@ -1,10 +1,3 @@
-<?php 
-session_start();
-    require_once('connectdb.php'); // database access
-    if(isset($_SESSION['loggedIn'])) { // user session check // set product variable based on previous user input
-        $results = mysql_query("SELECT * FROM category") or die ("retrievig info failed:").mysql_error; // if failed present an error// var to hold product row data
-        $num_rows = mysql_num_rows($results);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +8,11 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php require_once("connectdb.php") ?>
+    <?php 
+        $results = mysql_query("SELECT * FROM category ") or die ("retrieving info failed: ").mysql_error;
+        $num_rows = mysql_num_rows($results);
+    ?>
     <div class="wrapper">
     <div class="greenBack">
     <header>
@@ -23,7 +21,7 @@ session_start();
             <ul>
                 <a href="categories.php"><li>Home</li></a>
                 <a href=""><li>Cart</li></a>
-                <a href="logout.php"><li>Log Out</li></a>
+                <a href=""><li>Log Out</li></a>
             </ul>
         </nav>
     </header>
@@ -35,8 +33,8 @@ session_start();
             <td>Category Image</td>
         </tr> -->
         <?php
-            if ($num_rows = 0) {
-              echo "No products, please check back soon";
+            if ($num_rows == 0) {
+//                echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
                     echo
@@ -50,14 +48,6 @@ session_start();
 
     <!-- </table> -->
 </div>
-</div>
+    </div>
 </body>
 </html>
-
-<?php                                     
-} else { // not logged in 
-    header("Location: login.php"); // login user
-    mysql_close ($link); // close database for security
-    exit(); // end php
-}
-?>

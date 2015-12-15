@@ -194,19 +194,43 @@ a {
 }
 
 table {
+	color: #FFFFFF;
+	overflow: visible;
+	padding: 0 2.5%;
+	width: 100%;
+}
+
+.productTR {
 	margin: 0 2.5%;
 	width: 95%;
 }
 
 .prodName {
-	color: #FFFFFF;
 	display: inline-block;
 	font-size: 24px;
 	font-weight: 500;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	width: 100%;
 }
 
-.test {
-	border: solid 2px red;
+.productTR img {
+	padding: 15px 0 15px 25px;
+	width: 200px;
+}
+
+.productTR td:nth-of-type(3n+1) {
+	width: 25%;
+}
+
+.productTR td:nth-of-type(3n+2) {
+	width: 65%;
+}
+
+.productTR td:nth-of-type(3n+3) {
+	text-align: center;
+	width: 15%;
+}
+
+.productTR:nth-of-type(2n) {
+	background-color: #499F4D;
 }

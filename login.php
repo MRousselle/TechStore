@@ -1,8 +1,7 @@
 <?php
-session_start();
 if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted  
     function validator($data) { // security function
-        if ( isset($data)){
+        if ( isset($data)){ // confirm there is data
             $data = trim($data); // strip spaces
             $data = stripslashes($data); // strip slashes
             $data = htmlspecialchars($data); // convert any html special chars into standard text
@@ -20,7 +19,6 @@ if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted
     ) or die (mysql_error()); // if failed present an error
     $userRecords =  mysql_fetch_row($results); // fetch row data for the user
     if ($v_username == $userRecords[4] && $v_password == $userRecords[5]) { // if entered data matches records
-        
         $_SESSION['loggedIn'] = $v_username; // allow secure access
         $_SESSION['name'] = $v_username; // name session after username
         header("Location: categories.php"); // login user

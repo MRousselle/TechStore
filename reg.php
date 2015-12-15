@@ -17,7 +17,6 @@
                       VALUES('$v_firstName', '$v_lastName', '$v_email', '$v_userName', '$v_password')")
         or die("Insert Error: ".mysql_error());
         mysql_close($link);
-        header("Location: categories.php");
         print "Ya did it!"
     ?>
 </body>

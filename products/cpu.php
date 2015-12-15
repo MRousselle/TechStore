@@ -26,23 +26,18 @@
         </nav>
     </header>
     <table>
-        <tr>
-            <td>Image</td>
-            <td>Name</td>
-            <td>Description</td>
-        </tr>
         <?php
             if ($num_rows == 0) {
                echo "No Products, check back soon";
             } else {
                 while($row = mysql_fetch_array($results)){
-                    echo'<tr class="">
+                    echo'<tr class="productTR">
                             <td><img src="../images/'.$row['prod_img'].'"/></td>
                             <td>
                                 <span class="prodName">'.$row['prod_name'].'</span>
                                 '.$row['prod_desc'].'
                             </td>
-                            <td></td>
+                            <td>$'.$row['prod_price'].'</td>
                         </tr>';
                 }
             }
