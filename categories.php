@@ -9,9 +9,11 @@
 </head>
 <body>
     <?php require_once("connectdb.php") ?>
-    <?php 
-        $results = mysql_query("SELECT * FROM category ") or die ("retrieving info failed: ").mysql_error;
-        $num_rows = mysql_num_rows($results);
+    <?php
+        session_start(); // database access
+        if(isset($_SESSION['loggedIn'])) { // user session check // set product variable based on previous user input
+            $results = mysql_query("SELECT * FROM category") or die ("retrievig info failed:").mysql_error; // if failed present an error// var to hold product row data
+            $num_rows = mysql_num_rows($results);
     ?>
     <div class="wrapper">
     <div class="greenBack">
@@ -48,6 +50,13 @@
 
     <!-- </table> -->
 </div>
-    </div>
+</div>
 </body>
 </html>
+<?php                                     
+} else { // not logged in 
+    header("Location: login.php"); // login user
+    mysql_close ($link); // close database for security
+    exit(); // end php
+}
+?>

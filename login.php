@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ( isset( $_POST['submit'] ) ) {  // if form successfully submitted  
     function validator($data) { // SECURITY CHECK
         if ( isset($data)){ 
