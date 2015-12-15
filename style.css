@@ -19,6 +19,7 @@ body {
 .form h2 {
 	background-color: #388E3C;
 	box-sizing: border-box;
+	color: #FFFFFF;
 	display: inline-block;
 	font-weight: 400;
 	margin: 0;
@@ -88,21 +89,106 @@ body {
 }
 
 .wrapper {
+	background-color: #4CAF50;
 	display: block;
 	max-width: 960px;
 	margin: 0 auto;
 	width: 90%;
 }
 
+.greenBack {
+	background-color: #4CAF50;
+	display: inline-block;
+	width: 100%;
+}
+
+header {
+	background-color: #388E3C;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	display: inline-block;
+	font-weight: 400;
+	margin: 0;
+	overflow-left: scroll;
+	padding: 20px;
+	width: 100%;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+header h2 {
+	display: inline-block;
+	font-size: 28px;
+	margin: 0;
+}
+
+header nav {
+	float: right;
+}
+
+header nav ul {
+	list-style-type: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+}
+
+header nav ul a {
+	color: #FFFFFF;
+}
+
+header nav ul a:hover {
+	color: #FFEB3B;
+}
+
+header nav ul li {
+	display: inline;
+	font-size: 24px;
+	padding: 0 15px;
+}
+
+a {
+	text-decoration: none;
+}
+
 .categoryDiv {
 	box-sizing: border-box;
-	margin: 35px 2%;
-	width: 30%;
+	float: left;
+	height: 225px;
+	margin: 20px 2.5%;
+	width: 28%;
+}
+
+.categoryDiv:hover .categoryName {
+	color: #FFEB3B;
+}
+
+.categoryDiv:nth-of-type(3n+1){
+	margin-left: 2%;
+}
+
+.categoryDiv:nth-of-type(3n+0){
+	margin-right: 2%;
+}
+
+.categoryDiv div {
+	height: 200px;
 }
 
 .categoryDiv img {
 	display: block;
 	margin: 0 auto;
-	max-height: 100%;
+	max-height: 200px;
 	max-width: 100%;
+}
+
+.categoryName {
+	color: #FFFFFF;
+	background-color: #388E3C;
+	display: block;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
 }

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2015 at 11:16 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Dec 15, 2015 at 03:52 AM
+-- Server version: 10.0.17-MariaDB
+-- PHP Version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `techstore`
 --
-CREATE DATABASE IF NOT EXISTS `techstore` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `techstore`;
 
 -- --------------------------------------------------------
 
@@ -41,11 +39,13 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cat_ID`, `cat_name`, `cat_desc`, `cat_img`, `cat_pageName`) VALUES
-(1, 'Motherboards', 'all of the parts plug into the Motherboard', 'motherboard_cat.jpg', 'motherboards'),
-(2, 'RAM', 'RAM is a temporary storage for data', 'ram_cat.jpg', 'ram'),
-(3, 'Video Cards', 'The graphical powerhouse of a PC', 'videocard_cat.jpg', 'videocards'),
-(4, 'Processor', 'the logical center of your computer', 'processor_cat.jpg', 'cpu'),
-(5, 'Hard Drives & SSDs', 'Storage for all of your data', 'storage_cat.jpg', 'storage');
+(1, 'Processor', 'the logical center of your computer', 'cpuCategory.png', 'cpu'),
+(2, 'Motherboards', 'all of the parts plug into the Motherboard', 'motherboardCategory.png', 'motherboards'),
+(3, 'Video Cards', 'The graphical powerhouse of a PC', 'gpuCategory.png', 'videocards'),
+(4, 'RAM', 'RAM is a temporary storage for data', 'ramCategory.png', 'ram'),
+(5, 'Hard Drives & SSDs', 'Storage for all of your data', 'storageCategory.png', 'storage'),
+(6, 'Power Supplies', 'The device that provides power to your build', 'psuCategory.png', 'psu'),
+(7, 'Cases and Towers', 'The case that houses your build', 'caseCategory.png', 'cases');
 
 -- --------------------------------------------------------
 
@@ -87,6 +87,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_ID`, `user_firstName`, `user_lastName`, `user_email`, `user_userName`, `user_password`) VALUES
+(3, 'Tyler', 'Nicol', 'tylernicol556@gmail.com', 'tyler', 'tyler');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -110,12 +117,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cat_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
