@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2015 at 03:52 AM
+-- Generation Time: Dec 15, 2015 at 02:51 PM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `techstore`
 --
+CREATE DATABASE IF NOT EXISTS `techstore` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `techstore`;
 
 -- --------------------------------------------------------
 
@@ -54,8 +56,9 @@ INSERT INTO `category` (`cat_ID`, `cat_name`, `cat_desc`, `cat_img`, `cat_pageNa
 --
 
 CREATE TABLE `products` (
+  `prod_ID` int(11) NOT NULL,
   `prod_name` varchar(20) NOT NULL,
-  `prod_desc` varchar(50) NOT NULL,
+  `prod_desc` text NOT NULL,
   `prod_img` varchar(20) NOT NULL,
   `prod_price` decimal(10,0) NOT NULL,
   `prod_qty` int(3) NOT NULL,
@@ -66,10 +69,11 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`prod_name`, `prod_desc`, `prod_img`, `prod_price`, `prod_qty`, `prod_cat`) VALUES
-('Motherboard', 'the thing that all the parts plug into', 'motherboard1.jpg', '160', 10, 'motherboards'),
-('Nvidia GTX 980ti', 'ill insert this later, this is a placeholder', 'videocard1.jpg', '749', 20, 'videocards'),
-('HyperX Fury DDR4 RAM', 'ill insert this later, this is a placeholder', 'ram1.jpg', '129', 12, 'ram');
+INSERT INTO `products` (`prod_ID`, `prod_name`, `prod_desc`, `prod_img`, `prod_price`, `prod_qty`, `prod_cat`) VALUES
+(1, 'Motherboard', 'the thing that all the parts plug into', 'motherboard1.jpg', '160', 10, 'motherboards'),
+(2, 'Nvidia GTX 980ti', 'ill insert this later, this is a placeholder', 'videocard1.jpg', '749', 20, 'videocards'),
+(3, 'HyperX Fury DDR4 RAM', 'ill insert this later, this is a placeholder', 'ram1.jpg', '129', 12, 'ram'),
+(4, 'Intel i7 4790k', 'Devil''s Canyon Quad-Core 4.0 GHz LGA 1150 BX80646I74790K Desktop Processor Intel HD Graphics 4600', 'cpu1.png', '439', 100, 'cpu');
 
 -- --------------------------------------------------------
 
@@ -87,13 +91,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_ID`, `user_firstName`, `user_lastName`, `user_email`, `user_userName`, `user_password`) VALUES
-(3, 'Tyler', 'Nicol', 'tylernicol556@gmail.com', 'tyler', 'tyler');
-
---
 -- Indexes for dumped tables
 --
 
@@ -102,6 +99,12 @@ INSERT INTO `users` (`user_ID`, `user_firstName`, `user_lastName`, `user_email`,
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`cat_ID`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`prod_ID`);
 
 --
 -- Indexes for table `users`
@@ -118,6 +121,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `category`
   MODIFY `cat_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `prod_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
