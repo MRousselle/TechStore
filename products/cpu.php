@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Catalog</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <?php include "../connectdb.php" ?>
@@ -10,7 +13,18 @@
         $results = mysql_query("SELECT * FROM products WHERE prod_cat = 'cpu'") or die ("retrieving info failed: ").mysql_error;
         $num_rows = mysql_num_rows($results);
     ?>
-    <h2>List of Products</h2>
+    <div class="wrapper">
+    <div class="greenBack">
+    <header>
+        <h2>RJTS Computers</h2>
+        <nav>
+            <ul>
+                <a href="../categories.php"><li>Home</li></a>
+                <a href=""><li>Cart</li></a>
+                <a href=""><li>Log Out</li></a>
+            </ul>
+        </nav>
+    </header>
     <table border="2">
         <tr>
             <td>Category Name</td>
@@ -27,5 +41,7 @@
             }
         ?>
     </table>
+    </div>
+    </div>
 </body>
 </html>
